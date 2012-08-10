@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+.ui-multiprogressbar .ui-progressbar-value {
+	float: left;
+}
+
+.ui-multiprogressbar .ui-multiprogressbar-valuetext {
+	margin-top: 0.3em;
+	text-align: center;
+}
