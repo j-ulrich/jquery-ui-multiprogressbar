@@ -18,39 +18,41 @@ remaining parts will not be shown.
 
 Options
 -------
-- disabled {Boolean}: Disables (`true`) or enables (`false`) the multiprogressbar. Default: `false`
-- parts {Array}: Array of objects defining the properties of the different parts. The objects
+* disabled {Boolean}: Disables (`true`) or enables (`false`) the multiprogressbar. Default: `false`
+* parts {Array}: Array of objects defining the properties of the different parts. The objects
 	can have the following properties:
-	- value {Numeric}: The progress value of the part in percent (required).
-	- barClass {String}: Space separated list of class names to be added to the bar of the part.
-	- text {String, Boolean}: Text to be displayed on top of the bar of the part. If text is a
+	* value {Numeric}: The progress value of the part in percent (required).
+	* barClass {String}: Space separated list of class names to be added to the bar of the part.
+	* text {String, Boolean}: Text to be displayed on top of the bar of the part. If text is a
 		string, the given text is displayed on top of the bar. If text is true, the current progress
 		of the part is shown (rounded down to integer and appended with a percent sign). If text is
 		false, no text will be shown (the default).
-	- textClass {String}: Space separated list of class names to be added to the text of the part.
+	* textClass {String}: Space separated list of class names to be added to the text of the part.
+	By default, an "empty" progressbar is created, i.e. a progressbar with one part with progress "0".
 
 Events
 ------
-- create {multiprogressbarcreate}: when the progressbar was created
-- change {multiprogressbarchange}: when the parts are changed
-- complete {multiprogressbarcomplete}: when the sum of the progress of the parts equals or exceeds 100
+* create {multiprogressbarcreate}: Triggered when the progressbar was created
+* change {multiprogressbarchange}: Triggered when the parts are changed
+* complete {multiprogressbarcomplete}: Triggered  when the sum of the progress of the parts equals
+	or exceeds 100
 
 Methods
 -------
-- destroy: Removes the multiprogressbar functionality completely. This will return the element back
+* destroy: Removes the multiprogressbar functionality completely. This will return the element back
 	to its pre-init state.
 	Synopsis: `.multiprogressbar("destroy")`
-- disable: Disables the multiprogressbar.
+* disable: Disables the multiprogressbar.
 	Synopsis: `.multiprogressbar("disable")`
-- enable: Enalbes the multiprogressbar.
+* enable: Enalbes the multiprogressbar.
 	Synopsis: `.multiprogressbar("enable")`
-- option: Get or set any multiprogressbar option. If no value is specified, will act as a getter.
+* option: Get or set any multiprogressbar option. If no value is specified, will act as a getter.
 	Synopsis: `.multiprogressbar("option", optionName, [value])`
-- option: Set multiple multiprogressbar options at once by providing an options object.
+* option: Set multiple multiprogressbar options at once by providing an options object.
 	Synopsis: `.multiprogressbar("option", options)`
-- widget: Returns the .ui-multiprogressbar element.
+* widget: Returns the .ui-multiprogressbar element.
 	Synopsis: `.multiprogressbar("widget")`
-- total: Returns the sum of the progress of all parts
+* total: Returns the sum of the progress of all parts
 	Synopsis: `.multiprogressbar("total")`
 
 Example usage
