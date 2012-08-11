@@ -16,7 +16,7 @@ below.
 If the sum of the progress values exceeds 100, the progress will be truncated at 100 and the
 remaining parts will not be shown.
 
-#### Example: #####
+#### Example: ####
 ```javascript
 // Initialize the multiprogressbar
 $('#MultiProgressBarDiv').multiprogressbar({
@@ -33,6 +33,12 @@ $('#MultiProgressBarDiv').bind('multiprogressbarcomplete', function() { alert('C
 var total = $('#MultiProgressBarDiv').multiprogressbar('total');
 ```
 
+#### Demos: ####
+The [demo folder](https://github.com/j-ulrich/jquery-ui-multiprogressbar/tree/master/demo) contains a
+demonstration of most of the features of the multiprogressbar plugin.
+
+A live demo can found at http://jsbin.com/ihizaj/7/ which can also be used to
+[play around with the plugin](http://jsbin.com/ihizaj/7/edit).
 
 Options
 -------
