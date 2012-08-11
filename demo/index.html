@@ -62,13 +62,28 @@
 		</div>
 	</body>
 	<script type="text/javascript">
-	$('#plain').multiprogressbar({parts:[{value: 10}, {value: 20}, {value: 40}]});
+	$('#plain').multiprogressbar({
+		parts:[{value: 10},
+				{value: 20},
+				{value: 40}]
+	});
 	
-	$('#withText').multiprogressbar({parts:[{value: 10, text: true}, {value: 20, text: "Foo"}]});
+	$('#withText').multiprogressbar({
+		parts:[{value: 10, text: true},
+				{value: 20, text: "Foo"}]
+	});
 	
-	$('#styled').multiprogressbar({parts:[{value: 35.7, text: true, barClass: "blue", textClass: "redText"}, {value: 20, text: "Foo", barClass: "red", textClass: "footnote"}]});
+	$('#styled').multiprogressbar({
+		parts:[{value: 35.7, text: true, barClass: "blue", textClass: "redText"},
+				{value: 20, text: "Foo", barClass: "red", textClass: "footnote"}]
+	});
 	
 	// The last part will be truncated since the total progress exceeds 100%
-	$('#complete').multiprogressbar({parts:[{value: 30}, {value: 10, barClass: "gradient"}, {value: 10}, {value: 10, barClass: "gradient"}, {value: 45, text: true}]});
+	$('#complete').multiprogressbar({
+		parts:[{value: 30},
+				{value: 10, barClass: "gradient"},
+				{value: 10}, {value: 10, barClass: "gradient"},
+				{value: 45, text: true}]
+	});
 	</script>
 </html>
