@@ -37,8 +37,8 @@ var total = $('#MultiProgressBarDiv').multiprogressbar('total');
 The [demo folder](https://github.com/j-ulrich/jquery-ui-multiprogressbar/tree/master/demo) contains a
 demonstration of most of the features of the multiprogressbar plugin.
 
-A live demo can be found at http://jsbin.com/ihizaj/7 which can also be used to
-[play around with the plugin](http://jsbin.com/ihizaj/7/edit).
+Live demos can be found at [jsFiddle](http://jsfiddle.net/Ignitor/E6UPN/) and [JS Bin](http://jsbin.com/ihizaj/latest/edit)
+which can also be used to play around with the plugin.
 
 Options
 -------
