@@ -121,7 +121,7 @@ not introduce a progressbar widget that significantly differs from the one provi
 
 Licensing
 ---------
-Copyright (c) 2012 Jochen Ulrich
+Copyright &copy; 2012 Jochen Ulrich
 http://github.com/j-ulrich/jquery-ui-multiprogressbar
 
 Licensed under the [MIT license](http://opensource.org/licenses/MIT).
