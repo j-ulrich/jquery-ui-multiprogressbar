@@ -1,17 +1,40 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <title>jquery-ui-multiprogressbar by j-ulrich</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.22/themes/ui-lightness/jquery-ui.css" />
+    <link rel="stylesheet" href="jquery.ui.multiprogressbar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.22/jquery-ui.min.js"></script>
+    <script src="jquery.outerhtml.js"></script>
+    <script src="jquery.ui.multiprogressbar.js"></script>
     <script src="javascripts/main.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style type="text/css">
+        #example {
+            margin-bottom: 2em;
+        }
+        #banner .github-links {
+            left: 50%;
+            position: fixed;
+            margin-left: -325px;
+        }
+        #banner .github-links ul {
+            margin: 0px;
+        }
+        #banner .github-links .button {
+            margin-left: 0px;
+            margin-right: 5px;
+        }
+    
+    </style>
 
   </head>
   <body>
@@ -24,7 +47,13 @@
       <div id="banner">
         <span id="logo"></span>
 
-        <a href="https://github.com/j-ulrich/jquery-ui-multiprogressbar" class="button fork"><strong>View On GitHub</strong></a>
+		<div class="github-links">
+			<ul>
+				<li><a href="https://github.com/j-ulrich/jquery-ui-multiprogressbar/blob/master/README.md" class="button">Documentation</a></li>
+				<li><a href="https://github.com/j-ulrich/jquery-ui-multiprogressbar/issues" class="button">Bug Tracker</a></li>
+				<li><a href="https://github.com/j-ulrich/jquery-ui-multiprogressbar" class="button"><strong>View On GitHub</strong></a></li>
+			</ul>
+		</div>
         <div class="downloads">
           <span>Downloads:</span>
           <ul>
@@ -44,6 +73,9 @@
 <p>The multiprogressbar plugin provides a progress bar based on the basic jQuery UI progress bar
 widget but with the ability to split the progress into parts. Each part got it's own progress
 value and can be styled differently by providing class(es).</p>
+
+<h4>Demo:</h4>
+<div id="example"></div>
 
 <h2>Initialization &amp; Usage Example</h2>
 
@@ -73,16 +105,16 @@ remaining parts will not be shown.</p>
 <span class="kd">var</span> <span class="nx">total</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#MultiProgressBarDiv'</span><span class="p">).</span><span class="nx">multiprogressbar</span><span class="p">(</span><span class="s1">'total'</span><span class="p">);</span>
 </pre></div>
 
-<h4>More Demos</h4>
+<h2>More Demos</h2>
 
 <p>The <a href="https://github.com/j-ulrich/jquery-ui-multiprogressbar/tree/master/demo">demo folder</a> contains a
 demonstration of most of the features of the multiprogressbar plugin.</p>
 
-<p>Live demos can be found at <a href="http://jsfiddle.net/Ignitor/E6UPN/embedded/result/">jsFiddle</a> and <a href="http://jsbin.com/ihizaj/7/edit">JS Bin</a> which can be used to play around with the plugin.</p>
+<p>Live demos can be found at <a href="http://jsfiddle.net/Ignitor/E6UPN/embedded/result/">jsFiddle</a> and <a href="http://jsbin.com/ihizaj/10/edit">JS Bin</a> which can be used to play around with the plugin.</p>
 
 <h2>Documentation</h2>
 
-<p>The documentation of all the options, methods and events can be found in <a href="https://github.com/j-ulrich/jquery-ui-multiprogressbar/blob/master/README.md">the README on GitHub</a></p>
+<p>The documentation of all the options, methods and events can be found in <a href="https://github.com/j-ulrich/jquery-ui-multiprogressbar/blob/master/README.md">the README on GitHub</a>.</p>
 
 <h2>Requirements</h2>
 
