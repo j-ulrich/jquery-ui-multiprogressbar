@@ -104,13 +104,13 @@ Methods
 Requirements
 ------------
 The plugin requires
-* jQuery 1.3.2+
-* jQuery UI 1.8 (including the progressbar widget)
+* [jQuery 1.3.2+](http://jquery.com)
+* [jQuery UI 1.8+](http://jqueryui.com) (including the progressbar widget)
 * an "outerHTML" jQuery plugin like the one from Ca-Phun Ung (http://www.yelotofu.com/2008/08/jquery-outerhtml) that
 provides the outer HTML using a method with the name `outerHTML`
 
 Compatibility
-------------
+-------------
 The plugin has been successfully tested with jQuery 1.7.2 and jQuery UI 1.8.20 and it should be
 compatible with future versions as long as the implementation of the jQuery UI progressbar does
 not change significantly.
