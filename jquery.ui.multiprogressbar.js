@@ -71,13 +71,13 @@
 					$('<div></div>').addClass("ui-multiprogressbar-valuetext").text(textForPart).addClass(part.textClass).appendTo(partElement);
 				}
 			});
+			if (self.created === true) {
+				self._trigger("change", null, self.element);
+			}
 			if (totalValue >= 99.9) {
 				lastVisibleElement.addClass("ui-corner-right");
 				// Trigger complete
 				self._trigger("complete", null, self.element);
-			}
-			if (self.created === true) {
-				self._trigger("change", null, self.element);
 			}
 		},
 		

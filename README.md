@@ -68,7 +68,7 @@ Events
 	**Note:** This event is triggered even when there was no real change in the properties of the
 	parts (i.e. the event is triggered without checking whether one of the parts actually changed).
 * __complete__ _{multiprogressbarcomplete}_: Triggered when the sum of the progress of the parts equals
-	or exceeds 100.
+	or exceeds 100. This event is triggered after the `change` event is triggered.
 
 Methods
 -------
