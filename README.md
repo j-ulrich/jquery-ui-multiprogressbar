@@ -65,9 +65,8 @@ Events
 ------
 * __create__ _{multiprogressbarcreate}_: Triggered after the multiprogressbar has been created.
 * __change__ _{multiprogressbarchange}_: Triggered after the parts have been changed.  
-	**Note:** This event is also trigger right after the creation of the multiprogressbar and it is
-	triggered even when there was no real change in the properties of the parts (i.e. the event is
-	triggered without checking whether one of the parts actually changed).
+	**Note:** This event is triggered even when there was no real change in the properties of the
+	parts (i.e. the event is triggered without checking whether one of the parts actually changed).
 * __complete__ _{multiprogressbarcomplete}_: Triggered when the sum of the progress of the parts equals
 	or exceeds 100.
 
