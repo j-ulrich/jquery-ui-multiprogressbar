@@ -15,17 +15,18 @@ $(document).ready(function() {
 		testElement.multiprogressbar({
 			parts: parts
 		});
-		ok(testElement.hasClass("ui-multiprogressbar"), 'Verify that the expansion worked at all');
+		ok(testElement.hasClass("ui-multiprogressbar"), 'Verify the expansion worked at all');
 		
 		var partElements = testElement.children(".ui-progressbar-value");
-		strictEqual(partElements.length, 3, 'Verify that the parts have been created');
+		strictEqual(partElements.length, 3, 'Verify the parts have been created');
 		var testElementWidth = parseInt(testElement.css('width'));
 		partElements.each(function(index, partElement) {
 			var percentualWidth = Math.round(parseInt($(partElement).css('width')) / testElementWidth * 100);
-			strictEqual(percentualWidth, parts[index].value, 'Verify that the width of part '+index+' is correct');
+			strictEqual(percentualWidth, parts[index].value, 'Verify the width of part '+index+' is correct');
 		});
 	});
 	
+	module("option tests");
 	test("part text markup", function() {
 		var testElement = $('#multiprogressbartest');
 		var parts = [{value: 17, text: true},
@@ -40,7 +41,7 @@ $(document).ready(function() {
 		var partElements = testElement.children('.ui-progressbar-value');
 		partElements.each(function(index, partElement) {
 			if (parts[index].text) {
-				strictEqual($(partElement).children('.ui-multiprogressbar-valuetext').length, 1, 'Verify that part '+index+' has a value text');
+				strictEqual($(partElement).children('.ui-multiprogressbar-valuetext').length, 1, 'Verify part '+index+' has a value text');
 				if (parts[index].text === true) {
 					strictEqual($(partElement).text(), parts[index].value+"%", 'The text of the part should be its progress value');
 				}
@@ -77,7 +78,7 @@ $(document).ready(function() {
 					{value: 7, text: true}];
 		testElement.multiprogressbar('option', 'parts', parts);
 		strictEqual(testElement.children('.ui-progressbar-value').length, 2, 'Verify that there are two parts now');
-		strictEqual(testElement.text(), '10%7%', 'Verify that the parts have the correct width (verified via part text)');
+		strictEqual(testElement.text(), '10%7%', 'Verify the parts have the correct width (verified via part text)');
 	});
 	
 	module('event tests', {
@@ -86,33 +87,37 @@ $(document).ready(function() {
 		}
 	});
 	test("event triggering", function() {
-		var expectedEvents = [ 'create', 'change', 'change', 'complete' ];
+		var expectedEvents = [ ];
 		var expectedEventsIndex = 0;
-		expect(expectedEvents.length);
 		
 		$('#qunit-fixture').on('multiprogressbarcreate', '.ui-multiprogressbar', function() {
-			strictEqual(expectedEvents[expectedEventsIndex], 'create', "create triggered");
+			strictEqual('create', expectedEvents[expectedEventsIndex], "create triggered");
 			expectedEventsIndex += 1;
 		});
 		$('#qunit-fixture').on('multiprogressbarchange', '.ui-multiprogressbar', function() {
-			strictEqual(expectedEvents[expectedEventsIndex], 'change', "change triggered");
+			strictEqual('change', expectedEvents[expectedEventsIndex], "change triggered");
 			expectedEventsIndex += 1;
 		})
 		
 		$('#qunit-fixture').on('multiprogressbarcomplete', '.ui-multiprogressbar', function() {
-			strictEqual(expectedEvents[expectedEventsIndex], 'complete', "complete triggered");
+			strictEqual('complete', expectedEvents[expectedEventsIndex], "complete triggered");
 			expectedEventsIndex += 1;
 		})
 
 		var testElement = $('#multiprogressbartest');
 		// Trigger create
+		expectedEvents.push('create');
 		testElement.multiprogressbar({parts: [{value: 10}]});
 		
 		// Trigger change
+		expectedEvents.push('change');
 		testElement.multiprogressbar('option', 'parts', [{value: 5}]);
 		
 		// Trigger change and then complete
+		expectedEvents.push('change', 'complete');
 		testElement.multiprogressbar('option', 'parts', [{value: 50}, {value: 50}]);
+		
+		expect(expectedEvents.length);
 	});
 	
 });
