@@ -64,7 +64,11 @@ Options
 Events
 ------
 * __create__ _{multiprogressbarcreate}_: Triggered after the multiprogressbar has been created.
-* __change__ _{multiprogressbarchange}_: Triggered after the parts have been changed.  
+* __change__ _{multiprogressbarchange}_: Triggered after the parts have been changed. The callback is provided
+	the arguments `event` and `ui` where `ui.parts` is the new array of part objects. The part objects
+	represent the parts like they are actually displayed, i.e. if the parts are truncated, the value of
+	the truncated parts will be smaller than originally provided or will even be zero if the corresponding
+	part is not visible at all.
 	**Note:** This event is triggered even when there was no real change in the properties of the
 	parts (i.e. the event is triggered without checking whether one of the parts actually changed).
 * __complete__ _{multiprogressbarcomplete}_: Triggered when the sum of the progress of the parts equals

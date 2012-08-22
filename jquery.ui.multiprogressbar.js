@@ -72,12 +72,12 @@
 				}
 			});
 			if (self.created === true) {
-				self._trigger("change", null, self.element);
+				self._trigger("change", null, {parts: parts});
 			}
 			if (totalValue >= 99.9) {
 				lastVisibleElement.addClass("ui-corner-right");
 				// Trigger complete
-				self._trigger("complete", null, self.element);
+				self._trigger("complete");
 			}
 		},
 		
