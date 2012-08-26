@@ -19,9 +19,9 @@ $(document).ready(function() {
 		
 		var partElements = testElement.children(".ui-progressbar-value");
 		strictEqual(partElements.length, 3, 'Verify the parts have been created');
-		var testElementWidth = parseInt(testElement.css('width'));
+		var testElementWidth = testElement.width();
 		partElements.each(function(index, partElement) {
-			var percentualWidth = Math.round(parseInt($(partElement).css('width')) / testElementWidth * 100);
+			var percentualWidth = Math.round($(partElement).width() / testElementWidth * 100);
 			strictEqual(percentualWidth, parts[index].value, 'Verify the width of part '+index+' is correct');
 		});
 	});

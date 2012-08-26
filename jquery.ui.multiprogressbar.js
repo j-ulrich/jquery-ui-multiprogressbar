@@ -63,7 +63,7 @@
 				if (part.text !== undefined && part.text !== null && part.text !== false) {
 					var textForPart;
 					if (part.text === true) {
-						textForPart = Math.floor(part.value)+"%";
+						textForPart = Math.round(part.value)+"%";
 					}
 					else if (jQuery.trim(part.text) !== "") {
 						textForPart = part.text;
