@@ -38,7 +38,7 @@
 			var first = true;
 			var lastVisibleElement = null;
 			var totalValue = 0;
-			jQuery.each(parts, function(i, part) {
+			$.each(parts, function(i, part) {
 				var partElement = $(self._partTemplate).appendTo(self.element);
 				
 				if (first === false) {
@@ -65,7 +65,7 @@
 					if (part.text === true) {
 						textForPart = Math.round(part.value)+"%";
 					}
-					else if (jQuery.trim(part.text) !== "") {
+					else if ($.trim(part.text) !== "") {
 						textForPart = part.text;
 					}
 					$('<div></div>').addClass("ui-multiprogressbar-valuetext").text(textForPart).addClass(part.textClass).appendTo(partElement);
@@ -107,7 +107,7 @@
 		total: function() {
 			var self = this;
 			var totalValue = 0;
-			jQuery.each(self.options.parts, function(i, part) {
+			$.each(self.options.parts, function(i, part) {
 				totalValue += part.value;
 			});
 			
