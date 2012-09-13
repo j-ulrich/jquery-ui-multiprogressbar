@@ -90,16 +90,16 @@ $(document).ready(function() {
 		var expectedEvents = [ ];
 		var expectedEventsIndex = 0;
 		
-		$('#qunit-fixture').on('multiprogressbarcreate', '.ui-multiprogressbar', function() {
+		$('#qunit-fixture .ui-multiprogressbar').live('multiprogressbarcreate', function() {
 			strictEqual('create', expectedEvents[expectedEventsIndex], "create triggered");
 			expectedEventsIndex += 1;
 		});
-		$('#qunit-fixture').on('multiprogressbarchange', '.ui-multiprogressbar', function() {
+		$('#qunit-fixture .ui-multiprogressbar').live('multiprogressbarchange', function() {
 			strictEqual('change', expectedEvents[expectedEventsIndex], "change triggered");
 			expectedEventsIndex += 1;
 		})
 		
-		$('#qunit-fixture').on('multiprogressbarcomplete', '.ui-multiprogressbar', function() {
+		$('#qunit-fixture .ui-multiprogressbar').live('multiprogressbarcomplete', function() {
 			strictEqual('complete', expectedEvents[expectedEventsIndex], "complete triggered");
 			expectedEventsIndex += 1;
 		})
