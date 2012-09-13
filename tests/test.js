@@ -72,7 +72,7 @@ $(document).ready(function() {
 		var testElement = $('#multiprogressbartest');
 		testElement.multiprogressbar(); // Empty progressbar
 		strictEqual(testElement.children('.ui-progressbar-value').length, 1, 'Verify the progressbar contains one part');
-		strictEqual(testElement.children('.ui-progressbar-value').first().css("width"), '0px', 'Verify the one part is empty');
+		strictEqual(parseInt(testElement.children('.ui-progressbar-value').first().css("width")), 0, 'Verify the one part is empty');
 		
 		var parts = [{value: 10, text: true},
 					{value: 7, text: true}];
