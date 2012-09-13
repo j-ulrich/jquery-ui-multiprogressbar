@@ -83,7 +83,7 @@ $(document).ready(function() {
 	
 	module('event tests', {
 		teardown: function() {
-			$('#qunit-fixture').off();
+			$('#qunit-fixture').die();
 		}
 	});
 	test("event triggering", function() {
