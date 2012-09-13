@@ -107,8 +107,8 @@ Methods
 Requirements
 ------------
 The plugin requires
-* [jQuery 1.3.2+](http://jquery.com)
-* [jQuery UI 1.8+](http://jqueryui.com) (including the progressbar widget)
+* [jQuery 1.4.1+](http://jquery.com)
+* [jQuery UI 1.8.0+](http://jqueryui.com) (including the progressbar widget)
 * an "outerHTML" jQuery plugin like the one from Ca-Phun Ung (http://www.yelotofu.com/2008/08/jquery-outerhtml) that
 provides the outer HTML using a method with the name `outerHTML`
 
