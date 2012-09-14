@@ -1,19 +1,52 @@
-/*
- * jQuery UI Multi-Progress Bar 1.0
+/*jslint white: true vars: true browser: true todo: true */
+/*jshint camelcase:true, plusplus:true, forin:true, noarg:true, noempty:true, eqeqeq:true, bitwise:true, strict:true, undef:true, unused:true, curly:true, browser:true, devel:true, maxerr:100, white:false, onevar:false */
+/*global jQuery:true $:true */
+
+/* jQuery UI Multi-Progress Bar 1.0
  * http://github.com/j-ulrich/jquery-ui-multiprogressbar
  *
  * Copyright (c) 2012 Jochen Ulrich <jochenulrich@t-online.de>
  * Licensed under the MIT license (MIT-LICENSE.txt).
  */
 
+/**
+ * @file jQuery UI Multi-Progress Bar
+ * @version 1.0
+ * @copyright 2012 Jochen Ulrich
+ * @license MIT (MIT-LICENSE.txt)
+ */
+
 (function($) {
-	$.widget("ui.multiprogressbar", {
+	
+	/**
+	 * Constructs a multiprogressbar.
+	 * @name multiprogressbar
+	 * @public
+	 * @function
+	 * @memberOf jQuery.ui
+	 */
+	$.widget("ui.multiprogressbar", 
+	
+	/**
+	 * @lends jQuery.ui.multiprogressbar.prototype
+	 */
+	{
 		
 		// Options
+		/**
+		 * Default values of the options.
+		 * @since 1.0
+		 */
 		options: {
 			parts: [{value: 0, barClass: "", text: false, textClass: ""}]
 		},
 		
+		/**
+		 * Constructor for multiprogressbars.
+		 * @private
+		 * @author julrich
+		 * @since 1.0
+		 */
 		_create: function() {
 			var self = this;
 			self.element.progressbar({value: 0, disabled: self.options.disabled}); // Creates one part with width 0%
@@ -28,7 +61,8 @@
 		},
 		
 		/**
-		 * @returns {Object} a jQuery object containing all part elements.
+		 * @returns {object} a jQuery object containing all part elements.
+		 * @private
 		 * @author julrich
 		 * @since 1.0
 		 */
@@ -38,7 +72,8 @@
 		
 		/**
 		 * Performs the actual creation of the parts.
-		 * @param parts {Array} Array of part objects defining the properties of the parts to be created.
+		 * @param {array} parts - Array of part objects defining the properties of the parts to be created.
+		 * @private
 		 * @author julrich
 		 * @since 1.0
 		 */
@@ -92,12 +127,26 @@
 			}
 		},
 		
+		/**
+		 * Restores the element to it's original state.
+		 * @public
+		 * @author julrich
+		 * @since 1.0
+		 */
 		destroy: function() {
 			var self = this;
 			self._getPartElements().remove();
 			self.element.progressbar("destroy");
 		},
 		
+		/**
+		 * Changes an option.
+		 * @param {string} option -
+		 * @param value
+		 * @private
+		 * @author julrich
+		 * @since 1.0
+		 */
 		_setOption: function(option, value) {
 			var self = this;
 			$.Widget.prototype._setOption.apply( self, arguments );
@@ -110,10 +159,11 @@
 		},
 		
 		/**
-		 * @return {Numeric} the sum of the progress of all visible parts.
+		 * @return {numeric} the sum of the progress of all visible parts.
 		 * <b>Note:</b> When the sum of the progress of the parts exceeds 100, the progress
 		 * will be truncated at 100 and the value of successive parts will be set to 0. This means
 		 * that this function will always return a value in the range [0,100].
+		 * @public
 		 * @author julrich
 		 * @since 1.0
 		 */
