@@ -27,10 +27,21 @@
 			});
 		},
 		
+		/**
+		 * @returns {Object} a jQuery object containing all part elements.
+		 * @author julrich
+		 * @since 1.0
+		 */
 		_getPartElements: function() {
 			return this.element.children(".ui-progressbar-value");
 		},
 		
+		/**
+		 * Performs the actual creation of the parts.
+		 * @param parts {Array} Array of part objects defining the properties of the parts to be created.
+		 * @author julrich
+		 * @since 1.0
+		 */
 		_createParts: function(parts) {
 			var self = this;
 			
@@ -71,7 +82,7 @@
 					$('<div></div>').addClass("ui-multiprogressbar-valuetext").text(textForPart).addClass(part.textClass).appendTo(partElement);
 				}
 			});
-			if (self.created === true) {
+			if (self.created === true) { // Don't trigger "change" when we are creating the progressbar for the first time 
 				self._trigger("change", null, {parts: parts});
 			}
 			if (totalValue >= 99.9) {
@@ -103,6 +114,8 @@
 		 * <b>Note:</b> When the sum of the progress of the parts exceeds 100, the progress
 		 * will be truncated at 100 and the value of successive parts will be set to 0. This means
 		 * that this function will always return a value in the range [0,100].
+		 * @author julrich
+		 * @since 1.0
 		 */
 		total: function() {
 			var self = this;

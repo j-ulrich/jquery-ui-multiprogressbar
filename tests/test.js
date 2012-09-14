@@ -97,12 +97,11 @@ $(document).ready(function() {
 		$('#qunit-fixture .ui-multiprogressbar').live('multiprogressbarchange', function() {
 			strictEqual('change', expectedEvents[expectedEventsIndex], "change triggered");
 			expectedEventsIndex += 1;
-		})
-		
+		});
 		$('#qunit-fixture .ui-multiprogressbar').live('multiprogressbarcomplete', function() {
 			strictEqual('complete', expectedEvents[expectedEventsIndex], "complete triggered");
 			expectedEventsIndex += 1;
-		})
+		});
 
 		var testElement = $('#multiprogressbartest');
 		// Trigger create
