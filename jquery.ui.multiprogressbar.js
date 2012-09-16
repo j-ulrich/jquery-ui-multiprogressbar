@@ -61,7 +61,7 @@
 		},
 		
 		/**
-		 * @returns {object} a jQuery object containing all part elements.
+		 * @returns {Object} a jQuery object containing all part elements.
 		 * @private
 		 * @author julrich
 		 * @since 1.0
@@ -71,8 +71,11 @@
 		},
 		
 		/**
-		 * Performs the actual creation of the parts.
-		 * @param {array} parts - Array of part objects defining the properties of the parts to be created.
+		 * (Re)creates the markup of the parts.
+		 * @param {Array} parts - Array of part objects defining the properties of the parts to be created.
+		 * @fires multiprogressbar#change when the function is called <b>after</b> the creation of the multiprogressbar
+		 * (i.e. the event is not fired during the creation).
+		 * @fires multiprogressbar#complete when the total progress reaches or exceeds 100%.
 		 * @private
 		 * @author julrich
 		 * @since 1.0
@@ -141,8 +144,8 @@
 		
 		/**
 		 * Changes an option.
-		 * @param {string} option -
-		 * @param value
+		 * @param {String} option - name of the option to be set.
+		 * @param value - new value for the option.
 		 * @private
 		 * @author julrich
 		 * @since 1.0
@@ -159,7 +162,7 @@
 		},
 		
 		/**
-		 * @return {numeric} the sum of the progress of all visible parts.
+		 * @return {Numeric} the sum of the progress of all visible parts.
 		 * <b>Note:</b> When the sum of the progress of the parts exceeds 100, the progress
 		 * will be truncated at 100 and the value of successive parts will be set to 0. This means
 		 * that this function will always return a value in the range [0,100].
