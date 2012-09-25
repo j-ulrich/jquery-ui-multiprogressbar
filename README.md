@@ -5,6 +5,17 @@ The multiprogressbar plugin provides a progress bar based on the basic jQuery UI
 widget but with the ability to split the progress into parts. Each part got it's own progress
 value and can be styled differently by providing class(es).
 
+#### Table of Contents ####
+- [Initialization & Usage](#initialization--usage)
+	- [Example](#example)
+	- [Demos](#demos)
+- [Options](#options)
+- [Events](#events)
+- [Methods](#methods)
+- [Requirements](#requirements)
+- [Compatibility](#compatibility)
+- [Licensing](#licensing)
+
 Initialization & Usage
 ----------------------
 Similar to the basic progress bar, the multiprogressbar is created from a div element. The parts 
