@@ -1,0 +1,40 @@
+{
+	"name": "jquery-ui-multiprogressbar",
+	"description": "The multiprogressbar plugin provides a progress bar based on the basic jQuery UI progress bar widget but with the ability to split the progress into parts. Each part got it's own progress value and can be styled differently by providing class(es).",
+	"version": "1.1.0",
+	"keywords": ["jquery", "ui", "progressbar", "multipart", "multi", "multiprogressbar", "multi-part", "multi-progress"],
+	"maintainers": [{
+		"name": "Jochen Ulrich",
+		"email": "jochenulrich@t-online.de",
+		"web": "https://github.com/j-ulrich"
+	}],
+	"contributors": [{
+		"name": "Jochen Ulrich",
+		"email": "jochenulrich@t-online.de",
+		"web": "https://github.com/j-ulrich"
+	}],
+	"bugs": "https://github.com/j-ulrich/jquery-ui-multiprogressbar/issues",
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://github.com/j-ulrich/jquery-ui-multiprogressbar/MIT-LICENSE.txt"
+		}
+	],
+	"repositories": {
+		"type": "git",
+		"url": "https://github.com/j-ulrich/jquery-ui-multiprogressbar.git"
+	},
+	"dependencies": {
+		"jquery": "1.4.1"
+	},
+
+	
+	
+	"homepage": "https://github.com/j-ulrich/jquery-ui-multiprogressbar",
+	"scripts": {
+		"test": "grunt qunit"
+	},
+	"devDependencies": {
+		"grunt": "0.3.16"
+	}
+}
