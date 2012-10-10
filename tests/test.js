@@ -15,7 +15,7 @@ $(document).ready(function() {
 		testElement.multiprogressbar({
 			parts: parts
 		});
-		ok(testElement.hasClass("ui-multiprogressbar"), 'Verify the expansion worked at all');
+		ok(testElement.hasClass("ju-multiprogressbar"), 'Verify the expansion worked at all');
 		
 		var partElements = testElement.children(".ui-progressbar-value");
 		strictEqual(partElements.length, 3, 'Verify the parts have been created');
@@ -30,8 +30,8 @@ $(document).ready(function() {
 	test("part text markup", function() {
 		var testElement = $('#multiprogressbartest');
 		var parts = [{value: 17, text: true},
-		 			{value: 5, text: false},
-		 			{value: 8},
+					{value: 5, text: false},
+					{value: 8},
 					{value: 31, text: 'Foo'}];
 		testElement.multiprogressbar({
 			parts: parts
@@ -41,7 +41,7 @@ $(document).ready(function() {
 		var partElements = testElement.children('.ui-progressbar-value');
 		partElements.each(function(index, partElement) {
 			if (parts[index].text) {
-				strictEqual($(partElement).children('.ui-multiprogressbar-valuetext').length, 1, 'Verify part '+index+' has a value text');
+				strictEqual($(partElement).children('.ju-multiprogressbar-valuetext').length, 1, 'Verify part '+index+' has a value text');
 				if (parts[index].text === true) {
 					strictEqual($(partElement).text(), parts[index].value+"%", 'The text of the part should be its progress value');
 				}
@@ -64,15 +64,15 @@ $(document).ready(function() {
 		
 		ok(testElement.children('.ui-progressbar-value').first().hasClass("bar1"), 'Verify the classes were added to the bar');
 		ok(testElement.children('.ui-progressbar-value').first().hasClass("bar2"), 'Verify the classes were added to the bar');
-		ok(testElement.find('.ui-multiprogressbar-valuetext').first().hasClass("text1"), 'Verify the classes were added to the text');
-		ok(testElement.find('.ui-multiprogressbar-valuetext').first().hasClass("text2"), 'Verify the classes were added to the text');
+		ok(testElement.find('.ju-multiprogressbar-valuetext').first().hasClass("text1"), 'Verify the classes were added to the text');
+		ok(testElement.find('.ju-multiprogressbar-valuetext').first().hasClass("text2"), 'Verify the classes were added to the text');
 	});
 	
 	test("changing settings after creation", function() {
 		var testElement = $('#multiprogressbartest');
 		testElement.multiprogressbar(); // Empty progressbar
 		strictEqual(testElement.children('.ui-progressbar-value').length, 1, 'Verify the progressbar contains one part');
-		strictEqual(parseInt(testElement.children('.ui-progressbar-value').first().css("width")), 0, 'Verify the one part is empty');
+		strictEqual(parseInt(testElement.children('.ui-progressbar-value').first().css("width"),10), 0, 'Verify the one part is empty');
 		
 		var parts = [{value: 10, text: true},
 					{value: 7, text: true}];
@@ -83,22 +83,22 @@ $(document).ready(function() {
 	
 	module('event tests', {
 		teardown: function() {
-			$('#qunit-fixture .ui-multiprogressbar').die();
+			$('#qunit-fixture .ju-multiprogressbar').die();
 		}
 	});
 	test("event triggering", function() {
 		var expectedEvents = [ ];
 		var expectedEventsIndex = 0;
 		
-		$('#qunit-fixture .ui-multiprogressbar').live('multiprogressbarcreate', function() {
+		$('#qunit-fixture .ju-multiprogressbar').live('multiprogressbarcreate', function() {
 			strictEqual('create', expectedEvents[expectedEventsIndex], "create triggered");
 			expectedEventsIndex += 1;
 		});
-		$('#qunit-fixture .ui-multiprogressbar').live('multiprogressbarchange', function() {
+		$('#qunit-fixture .ju-multiprogressbar').live('multiprogressbarchange', function() {
 			strictEqual('change', expectedEvents[expectedEventsIndex], "change triggered");
 			expectedEventsIndex += 1;
 		});
-		$('#qunit-fixture .ui-multiprogressbar').live('multiprogressbarcomplete', function() {
+		$('#qunit-fixture .ju-multiprogressbar').live('multiprogressbarcomplete', function() {
 			strictEqual('complete', expectedEvents[expectedEventsIndex], "complete triggered");
 			expectedEventsIndex += 1;
 		});

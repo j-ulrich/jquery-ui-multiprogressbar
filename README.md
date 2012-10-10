@@ -1,5 +1,5 @@
-jQuery UI Multi-Progress Bar 1.0
-================================
+jQuery UI Multi-Progress Bar 1.1.0
+==================================
 
 The multiprogressbar plugin provides a progress bar based on the basic jQuery UI progress bar
 widget but with the ability to split the progress into parts. Each part got it's own progress
