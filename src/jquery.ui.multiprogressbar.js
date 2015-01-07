@@ -39,7 +39,7 @@
 		 * @since 1.0
 		 */
 		options: {
-			parts: [{value: 0, barClass: "", text: false, textClass: ""}]
+			parts: [{value: 0, barClass: "", text: false, textClass: "", data: null}]
 		},
 		
 		/**
@@ -109,6 +109,10 @@
 				}
 				
 				partElement.addClass(part.barClass);
+
+				if (part.data) {
+					partElement.data(part.data);
+				}
 				
 				if (part.text !== undefined && part.text !== null && part.text !== false) {
 					var textForPart;
