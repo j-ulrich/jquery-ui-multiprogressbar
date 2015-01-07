@@ -68,6 +68,16 @@ $(document).ready(function() {
 		ok(testElement.find('.ju-multiprogressbar-valuetext').first().hasClass("text2"), 'Verify the classes were added to the text');
 	});
 	
+	test("part data", function() {
+		var testElement = $('#multiprogressbartest');
+		var parts = [{value: 10, data: { isHere: true }}];
+		testElement.multiprogressbar({
+			parts: parts
+		});
+		
+		ok(testElement.children('.ui-progressbar-value').first().data("isHere"), 'Verify the data was added to the bar');
+	});
+	
 	test("changing settings after creation", function() {
 		var testElement = $('#multiprogressbartest');
 		testElement.multiprogressbar(); // Empty progressbar

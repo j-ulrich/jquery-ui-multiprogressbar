@@ -33,7 +33,8 @@ remaining parts will not be shown.
 $('#MultiProgressBarDiv').multiprogressbar({
 	parts: [{value: 10, text: true, barClass: 'FirstPartClass'}, // First part: 10% progress, display progress, use class 'FirstPartClass' for the bar
 			{value: 20, text: 'Critical', textClass: 'redText'}, // Second part: 20% progress, display the text 'Critical', use class 'redTest' for the text
-			{value: 35, barClass: 'ThirdPartClass ExtraClass'}], // Third part: 35% progress, use classes 'ThirdPartClass' and 'ExtraClass' for the bar
+			{value: 35, barClass: 'ThirdPartClass ExtraClass'}, // Third part: 35% progress, use classes 'ThirdPartClass' and 'ExtraClass' for the bar
+			{value: 35, data: { fourthPart: 'Extra' } }], // Fourth part: 35% progress, attach some data to the bar
 	complete: function() { alert('Full!'); } // Bind to the complete event during initialization
 });
 
